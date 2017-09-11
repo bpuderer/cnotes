@@ -25,7 +25,27 @@ int main() {
     /* Elvis operator
      * x = f() ?: g()
      * x = f() ? f() : g()
-     * same but f() not evaluated twice
+     * same logic but f() not evaluated twice
      */
+
+    char grade = 'C';
+    switch(grade) {
+        case 'A':
+            printf("Excellent\n");
+            break;
+        case 'B':
+        case 'C':
+            printf("Good job\n");
+            break;
+        case 'D':
+            printf("well, you passed\n");
+            break;
+        case 'F':
+            printf("failure\n");
+            break;
+        default:
+            printf("unknown grade value\n");
+    }
+
 }
 
