@@ -18,7 +18,7 @@ int main() {
     long long int lli; /* long long, signed long long int, signed long long */
     unsigned long long int ulli; /* unsigned long long */
 
-    float f = (float) i; /* explicit conversion */
+    float f = (float) i; /* type cast */
     double d;
     long double ld;
 

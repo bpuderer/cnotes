@@ -18,7 +18,7 @@ int main() {
 
     /*
      * operators: + - * / %
-     * assignment: = += -= *= /=
+     * assignment: = += -= *= /= %= <<= >>= &= ^= |=
      * increment, decrement: i++ ++i i-- --i
      * unary minus: -
      * comparison: < <= > >= == !=
