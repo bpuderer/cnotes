@@ -10,6 +10,7 @@ int main() {
      * compiler and linker
      */
 
+    /* variable names must start with _ or letter and contain _, letters, or digits */
     int x;
     int y;
     int z;
@@ -30,6 +31,9 @@ int main() {
     y = ++x;
     z = x++;
     printf("x=%d y=%d z=%d\n", x, y, z);
+
+    /* division operator - int vs float */
+    printf("%d %f %f %f\n", 11/10, 11.0/10, 11/10.0, 11.0/10.0);
 
     return 0;
 }
