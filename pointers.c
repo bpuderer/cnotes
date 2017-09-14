@@ -1,7 +1,7 @@
 #include <assert.h>
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
     int i = 5;
     int *j = &i; /* pointer variable */

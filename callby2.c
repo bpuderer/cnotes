@@ -2,7 +2,7 @@
 
 void foo(int *i); /* i is a pointer */
 
-int main() {
+int main(void) {
 
     int num = 9;
     foo(&num);

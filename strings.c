@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
 
     char name[5];
     char name2[] = "Michael";

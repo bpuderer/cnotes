@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
     unsigned int a = 11; /* 1011 */
     unsigned int b = 5;  /* 0101 */

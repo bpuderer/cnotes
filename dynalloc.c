@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
 
     /*
      * void * means pointer to anything
@@ -17,11 +17,12 @@ int main() {
      * must be explicitly freed using free() or else MEMORY LEAK
      */
 
+    int i;
     /* malloc does not init */
     int *arr;
     arr = (int *) malloc(5 * sizeof(int)); /* arr has address of 5 int array */
     printf("%p\n", arr);
-    for (int i=0; i < 5; i++) {
+    for (i = 0; i < 5; ++i) {
         printf("arr[%d]: %d\n", i, arr[i]);
     }
     free(arr);
@@ -34,7 +35,7 @@ int main() {
         fprintf(stderr, "memory allocation failed!");
         exit(1);
     }
-    for (int i=0; i < 5; i++) {
+    for (i = 0; i < 5; ++i) {
         printf("arr2[%d]: %d\n", i, arr2[i]);
     }
     free(arr2);

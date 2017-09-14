@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
     int i = 10;
     if (i < 0) {
@@ -48,4 +48,3 @@ int main() {
     }
 
 }
-

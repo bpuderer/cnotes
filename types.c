@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
     /* https://en.wikipedia.org/wiki/C_data_types */
     /* https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html#Primitive-Types */

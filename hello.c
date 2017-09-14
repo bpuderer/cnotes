@@ -4,7 +4,7 @@
  */
 #include <stdio.h>
 
-int main() {
+int main(void) {
     /*
      * gcc hello.c -o hello
      * compiler and linker

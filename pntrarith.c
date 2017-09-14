@@ -1,8 +1,9 @@
 #include <assert.h>
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
+    int i;
     int arr[] = { 1, 2, 3, 4, 5 };
     int *p = arr;
 
@@ -12,8 +13,8 @@ int main() {
     p += 2;
     printf("%p %d\n", p, *p);
 
-    printf("size of integer: %d\n", sizeof(int));
-    printf("size of (int *): %d\n", sizeof(int *));
+    printf("size of integer: %zd\n", sizeof(int));
+    printf("size of (int *): %zd\n", sizeof(int *));
 
 
     /* arrays are syntatic sugar for pointers */
@@ -22,7 +23,7 @@ int main() {
     printf("arr[2] = %d\n", *(arr + 2));
 
 
-    for (int i=0; i < 5; i++) {
+    for (i = 0; i < 5; ++i) {
         printf("arr[%d]: %d\n", i, *(arr + i));
     }
 
@@ -30,9 +31,9 @@ int main() {
 
     /* incrementing pointer is usually cheaper than pointer addition */
     p = arr;
-    for (int i=0; i < 5; i++) {
+    for (i = 0; i < 5; ++i) {
         printf("arr[%d]: %d\n", i, *p);
-        p++;
+        ++p;
     }
 
 }

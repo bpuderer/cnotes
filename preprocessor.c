@@ -10,10 +10,10 @@
 
 int data[SIZE] = { 9, -42, 3, -7, 13 };
 
-int main() {
+int main(void) {
 
     int i;
-    for (i=0; i < SIZE; i++) {
+    for (i = 0; i < SIZE; ++i) {
         printf("data[%d] : %d, squared : %d\n", i, data[i], SQR(data[i]));
     }
 

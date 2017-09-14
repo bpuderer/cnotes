@@ -2,7 +2,7 @@
 
 int factorial(int n);
 
-int main() {
+int main(void) {
     printf("%d! = %d\n", 4, factorial(4));
 }
 

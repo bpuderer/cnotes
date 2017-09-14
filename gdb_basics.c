@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
+int main(void) {
 
     /*
      * https://sourceware.org/gdb/current/onlinedocs/gdb/
@@ -23,9 +23,10 @@ int main() {
      * p, c, n, s           - print, continue, next, step shortcuts
      *
      */
-
+    int i;
+    int x;
     int arr[3] = { 28, 3, 44 };
-    for (int i=0; i < 3; i++) {
+    for (i = 0; i < 3; ++i) {
         printf("arr[%d]: %d\n", i, arr[i]);
     }
 
@@ -36,19 +37,18 @@ int main() {
         fprintf(stderr, "memory allocation failed!");
         exit(1);
     }
-    for (int i=0; i < 5; i++) {
+    for (i = 0; i < 5; ++i) {
         printf("arr2[%d]: %d\n", i, arr2[i]);
     }
     free(arr2);
 
 
-    int i;
-    i = 9;
+    x = 9;
 
     /* free(arr); /* trying to free non-heap object -> core dump */
 
-    i++;
-    i = 13;
+    ++x;
+    x = 13;
 
     /*
         (gdb) break gdb_basics.c:29

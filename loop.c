@@ -1,8 +1,9 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
     int a = 3;
+    int i;
     int x;
     int y = 3;
     int z;
@@ -12,11 +13,11 @@ int main() {
         a--;
     }
 
-    for (int i = 0; i < 5; i++) {
+    for (i = 0; i < 5; ++i) {
         printf("hey\n");
     }
 
-    for (int i = 0; i < 10; i++) {
+    for (i = 0; i < 10; ++i) {
         if (i % 2 == 0)
             continue;
         printf("i = %d\n", i);
@@ -33,6 +34,7 @@ int main() {
             break;    /* exits nearest enclosing loop */
     }
 
+    /* while with break more common than do-while */
     do {
         printf("y=%d\n", y);
         y--;

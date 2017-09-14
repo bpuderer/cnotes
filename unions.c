@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(void) {
 
     /* union contains only one value, all occupy same space */
     union val {

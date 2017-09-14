@@ -20,7 +20,7 @@ typedef struct {
 
 Point *make_point(void);
 
-int main() {
+int main(void) {
 
     /*
      * gcc structs.c -o structs -lm

@@ -8,7 +8,7 @@ int foo(int x);
 int bar(int x);
 int add_numbers(int num, ...); /* variadic function */
 
-int main() {
+int main(void) {
 
     int i;
 
@@ -42,7 +42,7 @@ int add_numbers(int num, ...) {
 
     va_start(params, num);
 
-    for (counter = 0; counter < num; counter++) {
+    for (counter = 0; counter < num; ++counter) {
         total += va_arg(params, int);
     }
 
