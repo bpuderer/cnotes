@@ -11,5 +11,5 @@ int main(void) {
 }
 
 void foo(int *i) {
-    (*i)++; /* ++ higer precedence than * so MUST use parens */
+    (*i)++; /* ++ higher precedence than * so MUST use parens */
 }
