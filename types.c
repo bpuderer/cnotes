@@ -41,4 +41,10 @@ int main(void) {
     printf("level: %d\n", level);
 
     printf("f=%f\n", f);
+
+    /* integer promotion */
+    ui = 3;
+    i = -10;
+    (ui+i > 3) ? puts("> 3") : puts("<= 3");
+
 }
