@@ -4,8 +4,8 @@
 int main(void) {
 
     int i = 5;
-    int *j = &i; /* pointer variable */
-    int **k = &j; /* pointer to a pointer */
+    int *j = &i; /* variable of a pointer type, & - address-of operator */
+    int **k = &j; /* pointer to a pointer, multiple indirection */
 
     printf("address : contents of address : deref : deref x 2\n");
 

@@ -3,6 +3,8 @@
 
 int main(void) {
 
+    /* no string type in C */
+
     char name[5];
     char name2[] = "Michael";
     char name3[10];

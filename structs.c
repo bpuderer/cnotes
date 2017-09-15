@@ -43,7 +43,7 @@ int main(void) {
 
     Point *p;
     p = make_point();
-    p->x = 9; /* p->x  same as   (*p).x   syntactic sugar */
+    p->x = 9; /* p->x  same as   (*p).x   pointer-to-member operator, syntactic sugar */
     p->y = -5;
     p->dist = sqrt(p->x*p->x + p->y*p->y);
     printf("x=%d y=%d dist=%f\n", p->x, p->y, p->dist);

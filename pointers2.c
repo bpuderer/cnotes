@@ -14,7 +14,7 @@ int main(void) {
     printf("j %p %p %d\n", &j, j, *j);
     printf("k %p %p %d\n", &k, k, *k);
 
-    *j = *k + i; /* store */
+    *j = *k + i; /* store operation */
     printf("i = %d\n", i);
 
 }
