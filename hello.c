@@ -6,7 +6,7 @@
 
 int main(void) {
     /*
-     * gcc hello.c -o hello
+     * gcc -Wall hello.c -o hello
      * compiler and linker
      */
 

@@ -13,7 +13,7 @@ struct point {
 
 /* anonymous struct, same as above */
 typedef struct {
-    int x;
+    int x; /* members */
     int y;
     double dist;
 } Point;

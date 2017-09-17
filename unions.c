@@ -2,7 +2,10 @@
 
 int main(void) {
 
-    /* union contains only one value, all occupy same space */
+    /*
+     * union contains only one value, all occupy same space
+     * size of union is size of largest member
+     */
     union val {
         int i;
         float f;

@@ -1,12 +1,13 @@
 #include <stdio.h>
 
+int factorial(int);
+
 int main(void) {
 
     int a = 3;
     int i;
     int x;
     int y = 3;
-    int z;
 
     while (a > 0) {
         printf("a=%d\n", a);
@@ -45,4 +46,13 @@ int main(void) {
      * goto <label>;
      * <label>:
      */
+
+     printf("%d! = %d\n", 4, factorial(4));
+}
+
+int factorial(int n) {
+    int i, j;
+    for (i = 1, j = 1; i <= n; j *= i, ++i)
+        continue;
+    return j;
 }

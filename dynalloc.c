@@ -18,7 +18,7 @@ int main(void) {
      */
 
     int i;
-    /* malloc does not init */
+    /* malloc does not init, returned value should be cast to appropriate type */
     int *arr;
     arr = (int *) malloc(5 * sizeof(int)); /* arr has address of 5 int array */
     printf("%p\n", arr);
@@ -27,7 +27,7 @@ int main(void) {
     }
     free(arr);
 
-    /* calloc sets allocated memory to zeros */
+    /* calloc sets allocated memory to zero */
     int *arr2;
     arr2 = (int *) calloc(5, sizeof(int));
     /* ALWAYS CHECK FOR NULL, same for malloc above */
