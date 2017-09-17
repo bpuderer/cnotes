@@ -20,24 +20,37 @@ int main(void) {
      * Bit 2 = PARITY_ERROR
     */
     char flags = 0; /* char can be used to store up to 8 status bits */
-    const int ERROR = (1<<0); /* 0x01 */
-    const int FRAMING_ERROR = (1<<1); /* 0x02 */
-    const int PARITY_ERROR = (1<<2); /* 0x04 */
+    const int ERROR = (1<<0);         /* 0x01, 00000001 */
+    const int FRAMING_ERROR = (1<<1); /* 0x02, 00000010 */
+    const int PARITY_ERROR = (1<<2);  /* 0x04, 00000100 */
 
     /* To SET a bit, use | */
-    flags |= FRAMING_ERROR;
+    flags |= ERROR;         /* 00000001, |0 keeps at current value, |1 = 1 */
+    flags |= FRAMING_ERROR; /* 00000010 */
+
+    printf("Testing...\n");
 
     /* To TEST a bit, use & */
     if (flags & ERROR)
-        printf("ERROR bit set\n");
-
+        printf("ERROR\n");
     if (flags & FRAMING_ERROR)
-        printf("FRAMING_ERROR bit set\n");
+        printf("FRAMING_ERROR\n");
+    if (flags & PARITY_ERROR)
+        printf("PARITY_ERROR\n");
+
+    printf("clearing ERROR and FRAMING_ERROR\n");
 
     /* To CLEAR a bit, use &= and ~ (NOT) */
-    flags &= ~FRAMING_ERROR;
+    flags &= ~ERROR;         /* 11111110, &1 keeps at current value, &0 = 0  */
+    flags &= ~FRAMING_ERROR; /* 11111101  */
 
+    printf("Testing...\n");
+
+    /* Re-test */
+    if (flags & ERROR)
+        printf("ERROR\n");
     if (flags & FRAMING_ERROR)
-        printf("FRAMING_ERROR bit set\n");
-
+        printf("FRAMING_ERROR\n");
+    if (flags & PARITY_ERROR)
+        printf("PARITY_ERROR\n");
 }
