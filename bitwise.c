@@ -1,4 +1,16 @@
+/* Example from Steve Oualline's Practical C Programming 3e
+ * Bit 0 = ERROR
+ * Bit 1 = FRAMING_ERROR
+ * Bit 2 = PARITY_ERROR
+*/
+
 #include <stdio.h>
+
+void check_errors(int);
+
+const int ERROR = (1<<0);         /* 0x01, 00000001 */
+const int FRAMING_ERROR = (1<<1); /* 0x02, 00000010 */
+const int PARITY_ERROR = (1<<2);  /* 0x04, 00000100 */
 
 int main(void) {
 
@@ -14,43 +26,29 @@ int main(void) {
     printf("%d >> 2 = %d\n", a, a >> 2);
 
 
-    /* Example from Steve Oualline's Practical C Programming 3e
-     * Bit 0 = ERROR
-     * Bit 1 = FRAMING_ERROR
-     * Bit 2 = PARITY_ERROR
-    */
     char flags = 0; /* char can be used to store up to 8 status bits */
-    const int ERROR = (1<<0);         /* 0x01, 00000001 */
-    const int FRAMING_ERROR = (1<<1); /* 0x02, 00000010 */
-    const int PARITY_ERROR = (1<<2);  /* 0x04, 00000100 */
 
     /* To SET a bit, use | */
     flags |= ERROR;         /* 00000001, |0 keeps at current value, |1 = 1 */
-    flags |= FRAMING_ERROR; /* 00000010 */
+    flags |= FRAMING_ERROR; /* 00000010                                    */
 
-    printf("Testing...\n");
-
-    /* To TEST a bit, use & */
-    if (flags & ERROR)
-        printf("ERROR\n");
-    if (flags & FRAMING_ERROR)
-        printf("FRAMING_ERROR\n");
-    if (flags & PARITY_ERROR)
-        printf("PARITY_ERROR\n");
+    check_errors(flags);
 
     printf("clearing ERROR and FRAMING_ERROR\n");
 
     /* To CLEAR a bit, use &= and ~ (NOT) */
     flags &= ~ERROR;         /* 11111110, &1 keeps at current value, &0 = 0  */
-    flags &= ~FRAMING_ERROR; /* 11111101  */
+    flags &= ~FRAMING_ERROR; /* 11111101                                     */
 
-    printf("Testing...\n");
+    check_errors(flags);
+}
 
-    /* Re-test */
-    if (flags & ERROR)
+void check_errors(int f) {
+    printf("Checking for errors...\n");
+    if (f & ERROR)
         printf("ERROR\n");
-    if (flags & FRAMING_ERROR)
+    if (f & FRAMING_ERROR)
         printf("FRAMING_ERROR\n");
-    if (flags & PARITY_ERROR)
+    if (f & PARITY_ERROR)
         printf("PARITY_ERROR\n");
 }
