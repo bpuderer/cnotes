@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int string_length(char*);
 void reverse(char*);
+int stringLength(char*);
+int simpleAtoi(char*);
 
 int main(void) {
 
@@ -14,6 +15,7 @@ int main(void) {
     char name4[20] = "John ";
     char name5[] = "Graham";
     char name6[] = "Terry";
+    char num[] = "123";
 
     name[0] = 'E';
     name[1] = 'r';
@@ -29,18 +31,13 @@ int main(void) {
     printf("strcmp(\"%s\", \"%s\") : %d\n", name3, name6, strcmp(name3, name6));
     printf("strcmp(\"%s\", \"%s\") : %d\n", name, name3, strcmp(name, name3));
 
-    printf("\"%s\" has length %d\n", name6, string_length(name6));
+    printf("\"%s\" has length %d\n", name6, stringLength(name6));
 
     printf("%s reversed : ", name);
     reverse(name);
     printf("%s\n", name);
-}
 
-int string_length(char *str) {
-    /* useless, obviously */
-    int count;
-    for (count=0; str[count] != '\0'; ++count);
-    return count;
+    printf("%s as int: %d\n", num, simpleAtoi(num));
 }
 
 void reverse(char *str) {
@@ -52,4 +49,23 @@ void reverse(char *str) {
             *end-- = tmp;
         }
     }
+}
+
+int stringLength(char *str) {
+    /* demo */
+    int count;
+    for (count = 0; str[count] != '\0'; ++count);
+    return count;
+}
+
+int simpleAtoi(char *str) {
+    /* simple version w/o handling for prepended whitespace,
+     * +/- sign or misc chars after integral number */
+    int i;
+    int sum = 0;
+
+    for (i = 0; str[i] != '\0'; ++i)
+        sum = 10*sum + str[i] - '0';
+
+    return sum;
 }
